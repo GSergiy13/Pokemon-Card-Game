@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './componets/header/header.js';
+import Layout from './componets/layout/layout.js';
+import Footer from './componets/footer/footer.js';
 
-function App() {
+// img
+
+import bg from './assets/bg1.jpeg';
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header title="lorem213" descr="dksjflsdj" />
+      <Layout title='Над, строчка инициал?' descr='Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.' urlBg={bg} colorBg='red'/>
+      <Layout title='Над, строчка инициал?' descr='Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.' colorBg='#e2e2e2'/>
+      <Layout title='Над, строчка инициал?' descr='Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.' urlBg={bg} colorBg='red'/>
+      <Footer />
+    </>
   );
-}
+};
+
 
 export default App;
