@@ -153,6 +153,7 @@ const HomePage = ({ handlerChangePage }) => {
   return (
     <>
       <MenuHeader />
+
       <Header title="lorem213" descr="dksjflsdj" onClickButton={hendlerClickButton} />
 
       <Layout title='Над, строчка инициал?' descr='Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.' urlBg={bg} colorBg='red'>

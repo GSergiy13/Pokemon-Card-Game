@@ -1,8 +1,8 @@
 import s from './style.module.css';
 import cn from 'classnames';
 
-const Navbar = ({ hendlerOpenMenu, state, bgActive }) => {
-  const hendlerMenu = () => {
+const Navbar = ({ hendlerOpenMenu, active, bgActive }) => {
+  const toggleActiveClass = () => {
     hendlerOpenMenu()
   }
 
@@ -13,7 +13,7 @@ const Navbar = ({ hendlerOpenMenu, state, bgActive }) => {
           <p className={s.brand}>
             LOGO
           </p>
-          <div onClick={hendlerMenu} className={cn(s.menuButton, { [s.active]: state })}>
+          <div onClick={toggleActiveClass} className={cn(s.menuButton, { [s.active]: active })}>
             <span></span>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import s from './style.module.css';
 import cn from 'classnames';
 
-const Menu = ({ state }) => {
+const Menu = ({ active }) => {
 
   const MEHU = [
     {
@@ -10,6 +10,10 @@ const Menu = ({ state }) => {
     },
     {
       title: 'GAME',
+      link: '#game'
+    },
+    {
+      title: 'ABOUT',
       link: '#about'
     },
     {
@@ -21,7 +25,7 @@ const Menu = ({ state }) => {
 
   return (
     <>
-      <div className={cn(s.menuContainer, { [s.active]: state === true, [s.deactive]: state === false })}>
+      <div className={cn(s.menuContainer, { [s.active]: active === true, [s.deactive]: active === false })}>
         <div className={s.overlay} />
         <div className={s.menuItems}>
           <ul>

@@ -13,8 +13,8 @@ const MenuHeader = ({ bgActive = false }) => {
 
   return (
     <>
-      <Menu state={state} />
-      <Navbar hendlerOpenMenu={hendlerOpenMenu} state={state} bgActive={bgActive} />
+      <Menu active={state} />
+      <Navbar hendlerOpenMenu={hendlerOpenMenu} active={state} bgActive={bgActive} />
     </>
   )
 }
