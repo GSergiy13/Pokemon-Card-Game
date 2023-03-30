@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import s from './style.module.css';
 import cn from 'classnames';
 
@@ -6,19 +8,19 @@ const Menu = ({ active }) => {
   const MEHU = [
     {
       title: 'HOME',
-      link: '#welcome'
+      link: '/'
     },
     {
       title: 'GAME',
-      link: '#game'
+      link: '/game'
     },
     {
       title: 'ABOUT',
-      link: '#about'
+      link: '/about'
     },
     {
       title: 'CONTACT',
-      link: '#contact'
+      link: '/contact'
     }
 
   ]
@@ -33,9 +35,9 @@ const Menu = ({ active }) => {
               MEHU.map(({ title, link }, index) => {
                 return (
                   <li key={index}>
-                    <a href={link}>
+                    <Link to={link}>
                       {title}
-                    </a>
+                    </Link>
                   </li>
                 )
               })

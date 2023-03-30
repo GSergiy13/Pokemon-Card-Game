@@ -1,51 +1,50 @@
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { Switch, Route, useRouteMatch, Redirect } from 'react-router-dom'
 
-// import { useState } from 'react';
 import HomePage from './routes/HomePage/HomePage';
 import GamePage from './routes/GamePage/GamePage';
 
 import './App.css';
+import MenuHeader from './componets/MenuHeader/MenuHeader';
+import Footer from './componets/footer/footer';
+
+
+import cn from 'classnames'
 
 const App = () => {
+  const match = useRouteMatch('/');
 
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route path="/" exact component={HomePage} />
-        <Route path="/game" component={GamePage} />
-        <Route path="/about" render={() => (
-          <>
-            <h1>Abotu</h1>
-          </>
-        )} />
-        <Route render={() => (
-          <>
-            <h1>404</h1>
-          </>
-        )
-        } />
-      </Switch>
-    </BrowserRouter>
+    <Switch>
+      <Route path="/404" render={() => (
+        <h1>404</h1>
+      )} />
+
+      <Route>
+        <>
+          <MenuHeader bgActive={!match.isExact} />
+          <div className={cn('wrapp', { ['isHomePage']: match.isExact })}>
+            <Switch>
+              <Route path="/" exact component={HomePage} />
+              <Route path="/contact" exact component={HomePage} />
+              <Route path="/game" component={GamePage} />
+              <Route path="/about" render={() => (
+                <>
+                  <h1>About</h1>
+                </>
+              )} />
+
+              <Route render={() => {
+                <Redirect to="/404" />
+              }} />
+            </Switch>
+          </div>
+          <Footer />
+        </>
+      </Route>
+
+    </Switch>
   )
 
-  // const [page, setPage] = useState('app');
-
-  // const handlerChangesPage = (page) => {
-  //   setPage(page);
-  // }
-
-  // const hendlerChangeHomePage = (page) => [
-  //   setPage(page)
-  // ]
-
-  // switch (page) {
-  //   case 'app':
-  //     return <HomePage handlerChangePage={handlerChangesPage} />
-  //   case 'game':
-  //     return <GamePage hendlerChange={hendlerChangeHomePage} />
-  //   default:
-  //     return <HomePage />
-  // }
 }
 
 export default App;

@@ -1,9 +1,12 @@
+import { useHistory } from 'react-router-dom';
+
 import style from './header.module.css';
 
 const Header = ({ title, descr, onClickButton }) => {
 
+    const history = useHistory();
     const hendlerClick = () => {
-        onClickButton && onClickButton('game')
+        history.push('/game');
     }
     return (
         <header className={style.root}>

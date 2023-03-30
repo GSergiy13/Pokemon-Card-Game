@@ -1,9 +1,6 @@
-
-import MenuHeader from '../../componets/MenuHeader/MenuHeader.js';
 import Header from '../../componets/header/header.js';
 import Layout from '../../componets/layout/layout.js';
 import PokemonCard from '../../componets/pokemonCard/PokemonCard.js';
-import Footer from '../../componets/footer/footer.js';
 
 import bg from '../../assets/bg1.jpeg';
 
@@ -152,7 +149,6 @@ const HomePage = ({ handlerChangePage }) => {
 
   return (
     <>
-      <MenuHeader />
 
       <Header title="lorem213" descr="dksjflsdj" onClickButton={hendlerClickButton} />
 
@@ -206,7 +202,6 @@ const HomePage = ({ handlerChangePage }) => {
           instead.
         </p>
       </Layout>
-      <Footer />
     </>
   );
 };

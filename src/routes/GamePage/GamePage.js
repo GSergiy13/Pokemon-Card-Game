@@ -1,5 +1,4 @@
 // import s from './style.module.css';
-import MenuHeader from "../../componets/MenuHeader/MenuHeader"
 
 const GamePage = ({ hendlerChange }) => {
 
@@ -9,7 +8,6 @@ const GamePage = ({ hendlerChange }) => {
 
   return (
     <>
-      <MenuHeader bgActive={true} />
       <br />
       <br />
       <br />
